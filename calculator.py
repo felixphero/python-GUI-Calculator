@@ -25,6 +25,14 @@ def click(args):
         number.set('9')
     elif args == 0:
         number.set('0')
+    elif args == "-":
+        number.set('-')
+    elif args == "+":
+        number.set('+')
+    elif args == "x":
+        number.set('x')
+    elif args == "÷":
+        number.set("÷")
 
 
 number = StringVar()
@@ -49,10 +57,14 @@ button9 = Button(text="9", command=lambda: click(9)
                  ).grid(row="4", column="0")
 button0 = Button(text="0", command=lambda: click(0)
                  ).grid(row="4", column="1")
-buttonAdd = Button(text="+").grid(row="1", column="3")
-buttonSub = Button(text="-").grid(row="2", column="3")
-buttonMul = Button(text="x").grid(row="3", column="3")
-buttonDiv = Button(text="÷").grid(row="4", column="2")
+buttonAdd = Button(text="+", command=lambda: click('+')
+                   ).grid(row="1", column="3")
+buttonSub = Button(text="-", command=lambda: click('-')
+                   ).grid(row="2", column="3")
+buttonMul = Button(text="x", command=lambda: click('x')
+                   ).grid(row="3", column="3")
+buttonDiv = Button(text="÷", command=lambda: click("÷")
+                   ).grid(row="4", column="2")
 buttonEq = Button(text="=").grid(row="4", column="3")
 buttonEq = Button(text=">").grid(row="1", column="0")
 
